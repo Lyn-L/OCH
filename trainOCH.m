@@ -42,7 +42,7 @@ while(iter<MaxIter)
     for i = 2:k
         for j = i:L
             if SimMatrix(rp1,i) / SimMatrix(rp1,j) < 1
-                Hxi = H(i,:); Hxj = H(j,:); Hxk = H(k,:);
+                Hxi = H(rp1,:); Hxj = H(i,:); Hxk = H(j,:);
                 tmp1 = landmark(rp1,:)' * ((1-Hxi.^2) .* (Hxj)) + landmark(i,:)' * ((1-Hxj.^2) .* (Hxi));
                 tmp2 = landmark(rp1,:)' * ((1-Hxi.^2) .* (Hxk)) + landmark(j,:)' * ((1-Hxk.^2) .* (Hxi));
                 Tij = (Hxi) * (Hxj)';
